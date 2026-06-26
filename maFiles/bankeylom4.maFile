@@ -1,0 +1,18 @@
+{
+  "shared_secret": "obCOYyeat57teq5+Q0e6YGSNwHs=",
+  "identity_secret": "LqxLCGy5osF3Wz8KQ+BTbyPuDV0=",
+  "device_id": "android:d107befa-06a7-4d29-af0a-013ff86bd2e6",
+  "account_name": "bankeylom4",
+  "revocation_code": "R20881",
+  "serial_number": "8663124639974437740",
+  "uri": "otpauth://totp/Steam:bankeylom4?secret=UGYI4YZHTK3Z53L2VZ7EGR52MBSI3QD3&issuer=Steam",
+  "token_gid": "53e864ae9ddef97",
+  "server_time": "1782479533",
+  "Session": {
+    "SteamID": "76561198680297835",
+    "RefreshToken": "eyAidHlwIjogIkpXVCIsICJhbGciOiAiRWREU0EiIH0.eyAiaXNzIjogInN0ZWFtIiwgInN1YiI6ICI3NjU2MTE5ODY4MDI5NzgzNSIsICJhdWQiOiBbICJ3ZWIiLCAicmVuZXciLCAiZGVyaXZlIiwgIm1vYmlsZSIgXSwgImV4cCI6IDE4MDA2NzM2OTAsICJuYmYiOiAxNzczODM5NTMyLCAiaWF0IjogMTc4MjQ3OTUzMiwgImp0aSI6ICIwMDA1XzI4NjRBRUQyXzc5QTk2IiwgIm9hdCI6IDE3ODI0Nzk1MzIsICJwZXIiOiAxLCAiaXBfc3ViamVjdCI6ICI4NS45NS4xNzkuMzkiLCAiaXBfY29uZmlybWVyIjogIjg1Ljk1LjE3OS4zOSIgfQ.uR0xgcK6CMcqWR-Fn0pVcmE2TGKK08Lq5DRGhbqbzMjgTzskCroYiGO-RxUUsltI9g35isiIvsNaiukJ24dJBw",
+    "AccessToken": "eyAidHlwIjogIkpXVCIsICJhbGciOiAiRWREU0EiIH0.eyAiaXNzIjogInI6MDAwNV8yODY0QUVEMl83OUE5NiIsICJzdWIiOiAiNzY1NjExOTg2ODAyOTc4MzUiLCAiYXVkIjogWyAid2ViIiwgIm1vYmlsZSIgXSwgImV4cCI6IDE3ODI1Njc0OTksICJuYmYiOiAxNzczODM5NTMyLCAiaWF0IjogMTc4MjQ3OTUzMiwgImp0aSI6ICIwMDA4XzI4NjRBRUNGXzI4RjU1IiwgIm9hdCI6IDE3ODI0Nzk1MzIsICJydF9leHAiOiAxODAwNjczNjkwLCAicGVyIjogMCwgImlwX3N1YmplY3QiOiAiODUuOTUuMTc5LjM5IiwgImlwX2NvbmZpcm1lciI6ICI4NS45NS4xNzkuMzkiIH0.AZDa6_HLIkPHPPguRCVCo1J9gh4WTn3UZ3hWcdhu3ATWQY65ddUsy8E5t7QNK7uWdgkraxuNLsM6dsmC-49TCg",
+    "SessionID": "113d85d07865730a241806e6"
+  },
+  "password": "rek2019AAAA"
+}

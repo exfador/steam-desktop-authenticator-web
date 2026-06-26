@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>coxerhub — Steam Guard manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <span class="aurora a1"></span>
+    <span class="aurora a2"></span>
+    <span class="aurora a3"></span>
+    <div class="grid"></div>
+    <div class="scan"></div>
+  </div>
+  <header>
+    <div class="brand">
+      <span class="glyph" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M9.2 12.2l2 2 3.6-3.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <div>
+        <h1>coxer<span class="web">hub</span></h1>
+        <p class="sub">Steam Guard manager</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="icon-btn" id="settingsBtn" aria-label="Настройки">
+        <svg viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M19.4 13.5a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.6 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.6-1.1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.9V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <aside class="sidebar">
+      <button class="create-btn" id="createBtn">
+        <span class="plus">+</span> Создать аутентификатор
+      </button>
+
+      <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Импорт mafile">
+        <svg class="dz-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 16V4m0 0L7 9m5-5l5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <p class="dz-title">Перетащите <b>.maFile</b></p>
+        <p class="dz-hint">или нажмите · Ctrl+V для вставки JSON</p>
+        <input type="file" id="fileInput" multiple accept=".maFile,.mafile,.json,application/json" hidden />
+      </div>
+
+      <div class="acct-search-wrap" id="acctSearchWrap" hidden>
+        <svg class="acct-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M20 20l-3.2-3.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <input type="text" id="acctSearch" class="acct-search" placeholder="поиск аккаунта…" aria-label="Поиск аккаунта" autocomplete="off" />
+        <span class="acct-count" id="acctCount" title="Всего аккаунтов"></span>
+      </div>
+
+      <div class="accounts" id="accounts"></div>
+
+      <a class="dev-credit" href="https://t.me/exfador" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.6 18.9 19.2c-.23 1.02-.84 1.27-1.7.79l-4.7-3.47-2.27 2.18c-.25.25-.46.46-.95.46l.34-4.83 8.8-7.95c.38-.34-.08-.53-.59-.19L6.3 13.2l-4.66-1.46c-1.01-.31-1.03-1 .22-1.49L20.64 3.1c.85-.31 1.58.2 1.3 1.5z"/></svg>
+        <span>разработчик · <b>@exfador</b></span>
+      </a>
+    </aside>
+
+    <section class="detail" id="detail">
+      <div class="empty" id="emptyState">
+        <svg class="empty-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="4" y="10" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M8 10V7a4 4 0 018 0v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <p>Выберите аккаунт или импортируйте <b>.maFile</b></p>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <div id="welcome" class="welcome-overlay hidden" role="dialog" aria-modal="true" aria-label="Приветствие SDA">
+    <div class="welcome">
+      <div class="welcome-aura" aria-hidden="true"></div>
+      <button class="welcome-x" id="welcomeClose" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <div class="welcome-top">
+        <span class="welcome-badge">SDA</span>
+        <span class="welcome-eyebrow">welcome</span>
+      </div>
+      <h3 class="welcome-title">Добро пожаловать в SDA</h3>
+      <p class="welcome-text">Хотите дёшево накручивать подписчиков, лайки и&nbsp;другое? Есть скидки для реселлеров.</p>
+      <a class="welcome-cta" href="https://neversmm.com" target="_blank" rel="noopener noreferrer">
+        <span>neversmm.com</span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <p class="welcome-foot">Это уведомление можно отключить в настройках</p>
+    </div>
+  </div>
+
+  <div id="settingsOverlay" class="overlay hidden">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+      <div class="modal-head">
+        <h2 id="settingsTitle">Настройки</h2>
+        <button class="icon-btn" id="settingsClose" aria-label="Закрыть">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label class="switch">
+          <input type="checkbox" id="setSkipPhone" />
+          <span class="switch-text">
+            <b>Пропускать привязку телефона</b>
+            <em>При создании аутентификатора не спрашивать номер — сразу подтверждение по email. Диалог с номером не появится.</em>
+          </span>
+        </label>
+        <label class="switch">
+          <input type="checkbox" id="setWelcome" />
+          <span class="switch-text">
+            <b>Показывать приветствие</b>
+            <em>Приветственное окно SDA с предложением от neversmm.com при заходе на сайт.</em>
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="linkOverlay" class="overlay hidden">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="linkTitle">
+      <div class="modal-head">
+        <h2 id="linkTitle">Создание аутентификатора</h2>
+        <button class="icon-btn" id="linkClose" aria-label="Закрыть">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="modal-body" id="linkBody"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
